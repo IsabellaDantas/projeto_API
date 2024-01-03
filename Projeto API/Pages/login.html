@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+
+    <style>
+        body{
+            background-color: palegreen;
+        }
+        h1{
+            text-align: center;
+            font-size: 50px;
+            color: white;
+        }
+        form{
+            font-size: 25px;
+            text-align: center;
+            color: palevioletred;
+        }
+        button{
+            background-color:palevioletred;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label for="username">Nome de usuário:</label>
+        <input type="text" id="username" required><br/>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" required><br/>
+        <button type="button" onclick="login()">Login</button>
+    </form>
+    <p id="loginMessage"></p>
+    
+    <script src="login.js"></script>
+    <script>
+      function login() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      if (username === 'admin' && password === 'senha123') {
+        document.getElementById('loginMessage').innerHTML = 'Login bem-sucedido!';
+    } else {
+        document.getElementById('loginMessage').innerHTML = 'Nome de usuário ou senha incorretos. Tente novamente.';
+    }
+  }
+    </script>
+    
+</body>
+</html>
+

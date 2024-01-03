@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: palegreen;
+        }
+        header {
+            background-color: palevioletred;
+            color:white;
+            padding: 1em;
+            text-align: center;
+        }
+        main {
+            padding: 2em;
+        }
+        button{
+            background-color: palevioletred;
+        }
+        h2{
+            font-size: 40px;
+            color:palevioletred;
+            text-align: center  ;
+        }
+        label{
+            font-size: 20px;
+            color:palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo a Beck Stoc</h1>
+    </header>
+    <main>
+        <p>Cadastre o produto da sua escolha.</p>
+        
+        <button onclick="exibirMensagem()">Clique para Cadastrar</button>
+        <p id="mensagem"></p>
+    </main>
+    <h2>Cadastro de Produto</h2>
+    <form action="processar_cadastro.php" method="post">
+        <label for="nome">Nome do Produto:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="preco">Preço:</label>
+        <input type="number" id="preco" name="preco" step="0.01" required>
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+        <label for="categoria">Categoria:</label>
+        <select id="categoria" name="categoria" required>
+            <option value="eletronicos">Comida</option>
+            <option value="roupas">Roupas</option>
+            <option value="roupas">Beleza</option>
+            <option value="livros">Esporte</option>
+        </select><br/><br/>
+
+        <button type="submit">Cadastrar Produto</button>
+    </form>
+    <script>
+        function exibirMensagem() {
+            document.getElementById('mensagem').innerHTML = 'Cadastrado.';
+        }
+        
+    </script><br/>
+    <a href="/logout/">Sair</a> </body>
+</body>
+</html>
